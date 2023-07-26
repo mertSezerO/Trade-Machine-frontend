@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
+import TradeMachine from './components/tradeMachine';
 
-function App() {
+export default function App() {
   return (
-    <></>
+    <TradeMachine/>
   );
 }
 
-export default App;
