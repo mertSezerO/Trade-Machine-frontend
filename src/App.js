@@ -1,10 +1,12 @@
 import './App.css';
 import TradeMachine from './components/tradeMachine';
-//import TradeProvider from './tradeContext';
+import TradeProvider from './tradeContext';
 
 export default function App() {
   return (
+    <TradeProvider>
       <TradeMachine/>
+    </TradeProvider>
   );
 }
 
