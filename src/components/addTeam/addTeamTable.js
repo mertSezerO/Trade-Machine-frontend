@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ConferenceTable from './conferenceTable';
 
-export default function AddTeamTable() {
+export default function AddTeamTable({teamOnClick}) {
   const [toggle, setToggle] = useState(false);
   const [teamsList, setTeamsList] = useState([]);
 
@@ -34,8 +34,14 @@ export default function AddTeamTable() {
       <button onClick={clickAddTeam}>Add Team</button>
       {toggle && (
         <div id="item-list">
-          <ConferenceTable conferenceName="East" teams={teamsList.filter(team => team.inConference === 'East')} />
-          <ConferenceTable conferenceName="West" teams={teamsList.filter(team => team.inConference === 'West')} />
+          <ConferenceTable 
+          conferenceName="East" 
+          teams={teamsList.filter(team => team.inConference === 'East')} 
+          teamOnClick={teamOnClick}/>
+          <ConferenceTable 
+          conferenceName="West" 
+          teams={teamsList.filter(team => team.inConference === 'West')}
+          teamOnClick={teamOnClick} />
         </div>
       )}
     </>
