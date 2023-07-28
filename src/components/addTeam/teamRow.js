@@ -1,29 +1,40 @@
 import { useContext } from "react";
-import TradeProvider from "../../tradeContext";
+import { TradeContext } from "../../tradeContext";
 
 export default function TeamRow({ team }) {
-    const context = useContext(TradeProvider)
+  const context = useContext(TradeContext);
 
-    function addTeamToTrade() {
-        newTeams = [...context.tradeTeams, team]
-        context.setTradeTeams(newTeams)
-        fetch('http://localhost:3000/teams/' + team.id, {
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-        .then(players => {
-            team.players = players
-        })
-        .catch(err => {
-            console.log(err)
-        });
+  async function addTeamToTrade() {
+    let newTeams = [...context.tradeTeams];
+    if (!newTeams.includes(team)) {
+      newTeams.push(team);
     }
+    const response = await fetch("http://localhost:3000/teams/" + team.id, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    const { players } = data;
+    team.players = players;
+    context.setTradeTeams(newTeams);
 
-    return(
-        <div className="item" onClick={addTeamToTrade}>
-            <img src= {team.imageURL} alt={team.name}></img>
-            <p>{team.name}</p>
-        </div>
-    )
+    // .then((players) => {
+    //   team.players = players;
+    //   context.setTradeTeams(newTeams);
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    // });
+  }
+
+  return (
+    <div className="item" onClick={addTeamToTrade}>
+      <img src={team.imageURL} alt={team.name}></img>
+      <p>{team.name}</p>
+    </div>
+  );
 }
