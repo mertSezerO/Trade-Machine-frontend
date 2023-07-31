@@ -8,9 +8,11 @@ export default function TradeTeamTable() {
 
   return (
     <>
-      {teams.map((team) => {
-        <TeamPlayersTable team={team} players={team.players} />;
-      })}
+      <div id="trade">
+        {teams.map((team) => (
+          <TeamPlayersTable key={team.id} team={team} players={team.players} />
+        ))}
+      </div>
     </>
   );
 }

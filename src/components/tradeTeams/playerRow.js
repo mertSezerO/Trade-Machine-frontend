@@ -1,8 +1,7 @@
 export default function PlayerRow({ player }) {
-  console.log(player);
   return (
     <div className="trade-item">
-      <img src={player.imageUrl} alt={player.name} />
+      <img src={player.imageURL} alt={player.name} />
       <p>{player.name}</p>
       <p>{player.salary}</p>
     </div>

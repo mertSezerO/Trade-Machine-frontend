@@ -1,15 +1,20 @@
-import { createContext, useState } from 'react';
+import { createContext, useState } from "react";
 
-const TradeContext = createContext()
+const TradeContext = createContext();
 export default function TradeProvider({ children }) {
-    const [tradeTeams,setTradeTeams] = useState([])
+  const [tradeTeams, setTradeTeams] = useState([]);
+  const [tradePlayers, setTradePlayers] = useState([]);
 
-    const state = {
-        tradeTeams,
-        setTradeTeams,
-    };
+  const state = {
+    tradeTeams,
+    setTradeTeams,
+    tradePlayers,
+    setTradePlayers,
+  };
 
-    return <TradeContext.Provider value={state}>{children}</TradeContext.Provider>;
+  return (
+    <TradeContext.Provider value={state}>{children}</TradeContext.Provider>
+  );
 }
 
-export {TradeContext};
+export { TradeContext };

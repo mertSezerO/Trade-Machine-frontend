@@ -9,26 +9,22 @@ export default function TeamRow({ team }) {
     if (!newTeams.includes(team)) {
       newTeams.push(team);
     }
-    const response = await fetch("http://localhost:3000/teams/" + team.id, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const data = await response.json();
-    const { players } = data;
-    team.players = players;
-    context.setTradeTeams(newTeams);
 
-    // .then((players) => {
-    //   team.players = players;
-    //   context.setTradeTeams(newTeams);
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // });
+    //This will be tested
+    if (!team.players) {
+      const response = await fetch("http://localhost:3000/teams/" + team.id, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      const { players } = data;
+      team.players = players;
+    }
+    context.setTradeTeams(newTeams);
   }
 
   return (

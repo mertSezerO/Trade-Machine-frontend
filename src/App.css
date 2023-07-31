@@ -1,3 +1,37 @@
+/* #machine
+{
+  display: flex;
+} */
+
+.main-container
+{
+  display: block;
+}
+
+#trade
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.trade-item-container
+{
+  border-color: #777777;
+  background-color:aliceblue ;
+}
+
+.trade-item 
+{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.trade-item img
+{
+  width: 5rem;
+  height: 4rem;
+}
+
 .item
 {
   display: flex;
@@ -9,8 +43,7 @@
   width: 2rem;
 }
 
-.item a
+.item p
 {
-  text-decoration: none;
   color: coral;
 }

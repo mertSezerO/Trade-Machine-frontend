@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import AddTeamTable from './addTeam/addTeamTable';
-import TradeTeamTable from './tradeTeams/tradeTeamTable';
+import { useState } from "react";
+import AddTeamTable from "./addTeam/addTeamTable";
+import TradeTeamTable from "./tradeTeams/tradeTeamTable";
 
 export default function TradeMachine() {
-    return (
-        <>
-            <AddTeamTable/>
-            <TradeTeamTable/>
-        </>
-    )
+  return (
+    <>
+      <div id="machine">
+        <AddTeamTable />
+        <TradeTeamTable />
+      </div>
+    </>
+  );
 }

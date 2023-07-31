@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import ConferenceTable from './conferenceTable';
+import React, { useState } from "react";
+import ConferenceTable from "./conferenceTable";
 
 export default function AddTeamTable() {
   const [toggle, setToggle] = useState(false);
@@ -9,22 +9,24 @@ export default function AddTeamTable() {
     setToggle(!toggle);
     if (!toggle) {
       try {
-        const response = await fetch('http://localhost:3000/teams', {
-          headers: {
-            'Content-Type': 'application/json',
+        if (teamsList.length === 0) {
+          const response = await fetch("http://localhost:3000/teams", {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
           }
-        });
 
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
+          const data = await response.json();
+          const { teams } = data;
+
+          setTeamsList(teams);
         }
-
-        const data = await response.json();
-        const { teams } = data;
-
-        setTeamsList(teams); // Update the teamsList state with the fetched data
       } catch (error) {
-        console.error('Error fetching teams:', error);
+        console.error("Error fetching teams:", error);
       }
     }
   }
@@ -34,12 +36,14 @@ export default function AddTeamTable() {
       <button onClick={clickAddTeam}>Add Team</button>
       {toggle && (
         <div id="item-list">
-          <ConferenceTable 
-          conferenceName="East" 
-          teams={teamsList.filter(team => team.inConference === 'East')} />
-          <ConferenceTable 
-          conferenceName="West" 
-          teams={teamsList.filter(team => team.inConference === 'West')}/>
+          <ConferenceTable
+            conferenceName="East"
+            teams={teamsList.filter((team) => team.inConference === "East")}
+          />
+          <ConferenceTable
+            conferenceName="West"
+            teams={teamsList.filter((team) => team.inConference === "West")}
+          />
         </div>
       )}
     </>
