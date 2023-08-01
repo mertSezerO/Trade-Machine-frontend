@@ -1,7 +1,11 @@
-/* #machine
+#machine button
 {
-  display: flex;
-} */
+  border-style: none;
+  background-color: lavender; /*  #4c394d; */
+  border: 1px ridge antiquewhite;
+  border-radius: 5px;
+  color: #DCAE96;
+}
 
 .main-container
 {
@@ -14,22 +18,43 @@
   justify-content: space-between;
 }
 
-.trade-item-container
+.total-item-container
 {
-  border-color: #777777;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-content: space-between;
+}
+
+.trade-item-container 
+{
+  border-style: ridge;
+  border-color:antiquewhite;
+  border-width: 2px;
   background-color:aliceblue ;
 }
 
 .trade-item 
 {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 250px;
 }
 
 .trade-item img
 {
-  width: 5rem;
-  height: 4rem;
+  width: 4rem;
+  height: 3rem;
+}
+
+.trade-item p
+{
+  font-size: small;
+}
+
+.block
+{
+  background-color:aliceblue ;
 }
 
 .item

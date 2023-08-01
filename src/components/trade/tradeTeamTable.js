@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import TeamPlayersTable from "./teamPlayersTable";
 import { TradeContext } from "../../tradeContext";
+import TradeBlockTable from "./tradeBlockTable";
+import TeamPlayersTable from "./teamPlayersTable";
 
 export default function TradeTeamTable() {
   const context = useContext(TradeContext);
@@ -10,9 +11,13 @@ export default function TradeTeamTable() {
     <>
       <div id="trade">
         {teams.map((team) => (
-          <TeamPlayersTable key={team.id} team={team} players={team.players} />
+          <div className="total-item-container">
+            <TeamPlayersTable team={team} players={team.players} />
+            <TradeBlockTable teamId={team.id} />
+          </div>
         ))}
       </div>
+      <button>Try This Trade</button>
     </>
   );
 }

@@ -1,6 +1,5 @@
-import { useState } from "react";
 import AddTeamTable from "./addTeam/addTeamTable";
-import TradeTeamTable from "./tradeTeams/tradeTeamTable";
+import TradeTeamTable from "./trade/tradeTeamTable";
 
 export default function TradeMachine() {
   return (
