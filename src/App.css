@@ -37,10 +37,8 @@ html,body, #root
 #add
 {
   width: 25%;
-  height: min-content;
-  background-color: red;
-  transition: height 4s ease-in-out;
-  transition-delay: 0.5s;
+  height: max-content;
+  background-color:red ;
 }
 
 #item-list

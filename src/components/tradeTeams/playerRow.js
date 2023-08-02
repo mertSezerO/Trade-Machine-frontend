@@ -29,6 +29,7 @@ export default function PlayerRow({ player }) {
       <img src={player.imageURL} alt={player.name} />
       <p>{player.name}</p>
       <p>{player.salary}</p>
+      <p>{player.PER}</p>
     </div>
   );
 }

@@ -22,16 +22,11 @@ export default function AddTeamTable() {
 
           const data = await response.json();
           const { teams } = data;
-          const div = document.getElementById("add");
-          div.style.height = "80%";
           setTeamsList(teams);
         }
       } catch (error) {
         console.error("Error fetching teams:", error);
       }
-    } else {
-      const div = document.getElementById("add");
-      div.style.height = "min-content";
     }
   }
 

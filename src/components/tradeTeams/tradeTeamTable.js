@@ -2,10 +2,15 @@ import { useContext } from "react";
 import { TradeContext } from "../../tradeContext";
 import TradeBlockTable from "./tradeBlockTable";
 import TeamPlayersTable from "./teamPlayersTable";
+import { Link } from "react-router-dom";
 
 export default function TradeTeamTable() {
   const context = useContext(TradeContext);
   const teams = context.tradeTeams;
+
+  function tryTrade() {
+    context.setTradeOffered(true);
+  }
 
   //An onClick action handler will be added.
   return (
@@ -21,7 +26,7 @@ export default function TradeTeamTable() {
         </div>
         {teams.length > 1 && (
           <div id="trade-button">
-            <button>Try This Trade</button>
+            <button onClick={tryTrade}>Try This Trade</button>
           </div>
         )}
       </div>
