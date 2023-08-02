@@ -1,10 +1,71 @@
+:root
+{
+  --border-color-list: antiquewhite;
+  --border-color-trade: #ff8f8f ;
+  --bc-color-team: #DCAE96;
+  --bc-color-player: aliceblue;
+  --text-color:whitesmoke;
+}
+
+#machine
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #machine button
 {
   border-style: none;
-  background-color: lavender; /*  #4c394d; */
-  border: 1px ridge antiquewhite;
+  background-color: var(--bc-color-team); /*  #4c394d; */
+  border: 1px ridge var(--border-color-list);
   border-radius: 5px;
-  color: #DCAE96;
+  color: var(--text-color);
+}
+
+#add
+{
+  width: 25%;
+}
+
+#item-list
+{
+  display: flex;
+}
+
+#type-list
+{
+  display: block;
+}
+
+.item
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bc-color-team);
+  border: ridge;
+  border-width: 1px;
+  border-radius: 3px;
+}
+
+.item img
+{
+  width: 3rem;
+  height: 3rem;
+}
+
+.item p
+{
+  color: var(--text-color);
+  font-size: 14px;
+  padding-left: 20px;
+}
+
+#trade
+{
+  display: block;
+  justify-content: space-between;
+  width: 75%;
 }
 
 .main-container
@@ -12,10 +73,11 @@
   display: block;
 }
 
-#trade
+.total-item-list
 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .total-item-container
@@ -26,12 +88,19 @@
   align-content: space-between;
 }
 
+#trade-button
+{
+  display: flex;
+  justify-content: center;
+}
+
 .trade-item-container 
 {
   border-style: ridge;
-  border-color:antiquewhite;
-  border-width: 2px;
-  background-color:aliceblue ;
+  border-color:var(--border-color-list);
+  border-width: 1px;
+  border-radius: 3px;
+  background-color:var(--bc-color-player) ;
 }
 
 .trade-item 
@@ -54,21 +123,9 @@
 
 .block
 {
-  background-color:aliceblue ;
-}
-
-.item
-{
-  display: flex;
-  justify-content: space-between;
-}
-
-.item img
-{
-  width: 2rem;
-}
-
-.item p
-{
-  color: coral;
+  background-color:var(--bc-color-player) ;
+  border: ridge;
+  border-width: 1px;
+  border-color: var(--border-color-trade);
+  border-radius: 3px;
 }

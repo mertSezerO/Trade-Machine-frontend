@@ -32,7 +32,7 @@ export default function AddTeamTable() {
   }
 
   return (
-    <>
+    <div id="add">
       <button onClick={clickAddTeam}>Add Team</button>
       {toggle && (
         <div id="item-list">
@@ -46,6 +46,6 @@ export default function AddTeamTable() {
           />
         </div>
       )}
-    </>
+    </div>
   );
 }

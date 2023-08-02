@@ -11,14 +11,18 @@ export default function TradeTeamTable() {
   return (
     <>
       <div id="trade">
-        {teams.map((team) => (
-          <div className="total-item-container">
-            <TeamPlayersTable team={team} players={team.players} />
-            <TradeBlockTable teamId={team.id} />
-          </div>
-        ))}
+        <div className="total-item-list">
+          {teams.map((team) => (
+            <div className="total-item-container">
+              <TeamPlayersTable team={team} players={team.players} />
+              <TradeBlockTable teamId={team.id} />
+            </div>
+          ))}
+        </div>
+        <div id="trade-button">
+          <button>Try This Trade</button>
+        </div>
       </div>
-      <button>Try This Trade</button>
     </>
   );
 }
