@@ -19,9 +19,11 @@ export default function TradeTeamTable() {
             </div>
           ))}
         </div>
-        <div id="trade-button">
-          <button>Try This Trade</button>
-        </div>
+        {teams.length > 1 && (
+          <div id="trade-button">
+            <button>Try This Trade</button>
+          </div>
+        )}
       </div>
     </>
   );

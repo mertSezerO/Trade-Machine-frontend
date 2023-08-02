@@ -23,6 +23,8 @@ export default function TeamRow({ team }) {
       const data = await response.json();
       const { players } = data;
       team.players = players;
+      const div = document.getElementById("trade");
+      div.style.background = "whitesmoke";
     }
     context.setTradeTeams(newTeams);
   }

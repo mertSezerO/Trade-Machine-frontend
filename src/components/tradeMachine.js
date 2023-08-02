@@ -3,11 +3,9 @@ import TradeTeamTable from "./trade/tradeTeamTable";
 
 export default function TradeMachine() {
   return (
-    <>
-      <div id="machine">
-        <AddTeamTable />
-        <TradeTeamTable />
-      </div>
-    </>
+    <div id="machine">
+      <AddTeamTable />
+      <TradeTeamTable />
+    </div>
   );
 }

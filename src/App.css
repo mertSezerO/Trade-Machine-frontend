@@ -2,15 +2,27 @@
 {
   --border-color-list: antiquewhite;
   --border-color-trade: #ff8f8f ;
-  --bc-color-team: #DCAE96;
-  --bc-color-player: aliceblue;
-  --text-color:whitesmoke;
+  --bc-color-team: #F0A500     ;
+  --bc-color-player: #A9A9A9    ;
+  --text-color:whitesmoke ;
+}
+
+html,body, #root
+{
+  width: 100%;
+  height: 100%;
+  background-color:#0077C0   /*0077C0*/  ;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  margin: 0;
 }
 
 #machine
 {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
 }
 
 #machine button
@@ -25,22 +37,33 @@
 #add
 {
   width: 25%;
+  height: min-content;
+  background-color: red;
+  transition: height 4s ease-in-out;
+  transition-delay: 0.5s;
 }
 
 #item-list
 {
   display: flex;
+  justify-content: space-around;
 }
 
-#type-list
+.type-list
 {
   display: block;
+  width: 45%;
+}
+
+.type-list p
+{
+  color: var(--text-color);
 }
 
 .item
 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: var(--bc-color-team);
   border: ridge;
@@ -50,22 +73,24 @@
 
 .item img
 {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .item p
 {
   color: var(--text-color);
   font-size: 14px;
-  padding-left: 20px;
+  padding-left: 15px;
 }
 
 #trade
 {
   display: block;
   justify-content: space-between;
+  height: max-content;
   width: 75%;
+  transition: background-color 0.2s;
 }
 
 .main-container
@@ -73,11 +98,16 @@
   display: block;
 }
 
+.main-container section
+{
+  color: var(--text-color);
+}
+
 .total-item-list
 {
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .total-item-container
@@ -107,6 +137,7 @@
 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 250px;
 }
 
@@ -119,6 +150,7 @@
 .trade-item p
 {
   font-size: small;
+  color: var(--text-color);
 }
 
 .block
