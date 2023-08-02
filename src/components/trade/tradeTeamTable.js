@@ -7,6 +7,7 @@ export default function TradeTeamTable() {
   const context = useContext(TradeContext);
   const teams = context.tradeTeams;
 
+  //An onClick action handler will be added.
   return (
     <>
       <div id="trade">
